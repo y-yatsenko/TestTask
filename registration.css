@@ -1,0 +1,36 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+.wrapper {
+    display: flex;
+    justify-content: center;
+}
+.formHead {
+    display: flex;
+    background-color: beige;
+    justify-content: center;
+}
+.form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    min-width: 290px;
+    border: 1px solid gray;
+    border-radius: 4px;
+}
+.formItem {
+    margin: 10px 20px 0 20px;
+    border: 1px solid red;
+    border-radius: 5px;
+    height: 20px;
+    outline: none;
+}
+.submitWrapper {
+    display: flex;
+    flex-direction: row-reverse;
+}
+.formItemSubmit {
+    width: 50px;
+    margin-bottom: 10px;
+}
