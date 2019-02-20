@@ -8,19 +8,28 @@ $(document).ready(function () {
     const password = form.password;
     const checkAgreement = form.check;
     const sub = form.sub;
+    // let o = {};
 
     $('form').on('submit', function (event) {
          event.preventDefault();
-        if (name.value === '') {
-         alert('please input your name');
+        if (name.value.length < 3 || /[0-9]/.test(name.value)) {
+         alert('Please input your name. Field \'name\' should contain from 3 to 60 letters');
+         // o.message = 'Please input your name. Field \'name\' should contain from 3 to 60 letters';
+         // o.field = 'name';
+         // o.status = 'Form Error';
+         //alert (o.message);
         }
-        if (secondName.value === '' || secondName.value.length < 3) {
-            alert('please input your second name');
+        if (secondName.value.length < 3 || /[0-9]/.test(secondName.value)) {
+            alert('Please input your second name. Field \'second name\' should contain from 3 to 60 letters');
         }
         if (email.value === '') {
-            alert('please input your email');
+            alert('Please input your email');
         }
-        if (checkAgreement.checked) {
+        if (checkAgreement.checked === false) {
+            alert ('Please accept conditions of agreement');
+        }
+        //if all information is correct, send her
+        if (name.value.length >= 3 && !(/[0-9]/.test(name.value)) && secondName.value.length >= 3 && !(/[0-9]/.test(secondName.value)) && checkAgreement.checked) {
             // send date to the server
             let data = $(this).serialize();
             $.ajax({
@@ -29,7 +38,14 @@ $(document).ready(function () {
                 data: data,
                 success: function(data) {
                     console.log(data);
-                    alert(data.message);
+                    if (data.status === 'OK') {
+                        alert('congrats');
+                        // move to the main page
+                        document.location.href = "mainPage.html";
+
+                    } else {
+                        alert(data.message);
+                    }
                 },
                 error: function (xhr, str) {
                     alert('Возникла ошибка: ' + xhr.responseCode);
@@ -38,4 +54,3 @@ $(document).ready(function () {
         }
     });
 })
-
