@@ -1,0 +1,61 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+.wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    margin-top: 20px;
+    width: 840px;
+    height: 640px;
+    border: 1px solid black;
+}
+.block {
+    flex-direction: row;
+    width: 400px;
+    height: 300px;
+    border: 1px solid saddlebrown;
+    margin: 10px 0px 0px 10px
+}
+.totalCompanies {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.countOfCompanies {
+    font-size: 100px;
+    color: palegreen;
+    border: 1px solid black;
+    border-radius: 50%;
+}
+.listOfCompanies {
+    overflow: hidden;
+    overflow-y: scroll;
+}
+.company {
+    height: 40px;
+    border: 1px solid red;
+}
+.selectedCompany {
+    border: 1px solid greenyellow;
+}
+.companyPartnersDisable {
+    display: none;
+}
+.companyPartnersShow {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    width: 810px;
+    height: 300px;
+    margin: 0 auto;
+    border: 1px solid deeppink;
+    align-content: space-between;
+    justify-content: center;
+    overflow-x: scroll;
+}
+.companyPartner {
+    height: 150px;
+    width: 150px;
+    background-color: yellowgreen;
+}
