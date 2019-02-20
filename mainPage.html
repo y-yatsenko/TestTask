@@ -3,31 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="mainPage.css">
+    <link rel="stylesheet" href="news.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="mainPage.js" defer></script>
+    <script src="news.js" defer></script>
     <title>Main Page</title>
 </head>
 <body>
     <div class="wrapper">
         <div class="block totalCompanies">
             <div class="title">
-                <p>Total Companies</p>
+                <span>Total Companies</span>
             </div>
             <p class="countOfCompanies"></p>
         </div>
         <div class="block">
             <div class="title">
-                <p>Total Companies</p>
+                <span>Total Companies</span>
             </div>
             <div class="listOfCompanies"></div>
         </div>
         <div class="companyPartnersDisable">
             <div class="title">
-                <p>Company Partners</p>
+                <span>Company Partners</span>
             </div>
         </div>
         <div class="block"></div>
-        <div class="block"></div>
+        <div class="block">
+            <div class="title">
+                <span>News</span>
+            </div>
+            <div class="news">
+                <img class="newsImg" src="" alt="breaking news">
+                <a class="newsLink">Title</a>
+                <div class="newsDescriptionWrapper">
+                    <span class="newsDescription"></span>
+                </div>
+
+            </div>
+            <div class="infoNews">
+                <div class="author"></div>
+                <div class="public"></div>
+                <div class="slider">
+                    <button class="btn prev"></button>
+                    <button class="btn next"></button>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>

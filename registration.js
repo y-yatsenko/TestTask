@@ -4,10 +4,7 @@ $(document).ready(function () {
     const name = form.name;
     const secondName = form.secondname;
     const email = form.email;
-    const gender = form.gender;
-    const password = form.password;
     const checkAgreement = form.check;
-    const sub = form.sub;
     // let o = {};
 
     $('form').on('submit', function (event) {
@@ -47,7 +44,7 @@ $(document).ready(function () {
                         alert(data.message);
                     }
                 },
-                error: function (xhr, str) {
+                error: function (xhr) {
                     alert('Возникла ошибка: ' + xhr.responseCode);
                 }
             })

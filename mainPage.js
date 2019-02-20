@@ -1,7 +1,11 @@
 "use strict";
 $(document).ready(function () {
     let data;
-    $.ajax({
+    $(document).on({
+        ajaxStart: function() { showLoader();},
+        ajaxStop: function() { hideLoader();}
+    });
+        $.ajax({
         url: 'http://codeit.pro/codeitCandidates/serverFrontendTest/company/getList',
         type: 'POST',
         data,
@@ -55,5 +59,13 @@ $(document).ready(function () {
                  $(divCompany).height(company.partners[j].value * ((($('.companyPartnersShow').height()) - ($('.title').height()))/100));
              }
         })
+    }
+    function showLoader() {
+        $('.countOfCompanies').append(`<div class="load"><img src="ajax-loader%20(1).gif" alt="load..."></div>`);
+        $('.listOfCompanies').append(`<div class="load"><img src="ajax-loader%20(1).gif" alt="load..."></div>`);
+
+    }
+    function hideLoader() {
+        $('.load').remove();
     }
 })

@@ -32,10 +32,9 @@ body {
     font-size: 100px;
     color: lightblue;
     margin: 0;
-
 }
 .listOfCompanies {
-    height: 150px;
+    height: 175px;
     overflow-y: scroll;
 }
 .company {
@@ -73,4 +72,14 @@ body {
     background-color: #8cc6ff;
     margin: 5px 5px 0 5px;
     border-radius: 5px;
+}
+@media (max-width: 620px) {
+    .wrapper {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    .companyPartnersShow {
+        width: 270px;
+    }
 }
