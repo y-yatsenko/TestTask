@@ -2,60 +2,75 @@ body {
     margin: 0;
     padding: 0;
 }
+
 .wrapper {
     display: flex;
     flex-wrap: wrap;
     margin: 0 auto;
     margin-top: 20px;
-    width: 840px;
-    height: 640px;
-    border: 1px solid black;
+    width: 584px;
 }
 .block {
-    flex-direction: row;
-    width: 400px;
-    height: 300px;
+    flex-direction: column;
+    width: 270px;
+    height: 200px;
     border: 1px solid saddlebrown;
-    margin: 10px 0px 0px 10px
+    margin: 10px;
+    border-radius: 5px;
+}
+.title {
+    width: 100%;
+    background-color: deepskyblue;
+    font-weight: bold;
+    overflow: hidden;
 }
 .totalCompanies {
     display: flex;
     align-items: center;
-    justify-content: center;
 }
 .countOfCompanies {
     font-size: 100px;
-    color: palegreen;
-    border: 1px solid black;
-    border-radius: 50%;
+    color: lightblue;
+    margin: 0;
+
 }
 .listOfCompanies {
-    overflow: hidden;
+    height: 150px;
     overflow-y: scroll;
 }
 .company {
+    display: flex;
+    align-items: center;
     height: 40px;
-    border: 1px solid red;
+    border-top: 1px solid black;
 }
 .selectedCompany {
-    border: 1px solid greenyellow;
+    background-color: lightblue;
 }
 .companyPartnersDisable {
     display: none;
 }
 .companyPartnersShow {
     display: flex;
-    flex-wrap: wrap-reverse;
-    width: 810px;
-    height: 300px;
-    margin: 0 auto;
-    border: 1px solid deeppink;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 200px;
+    margin: 20px 10px 20px 10px;
+    border: 1px solid saddlebrown;
     align-content: space-between;
     justify-content: center;
     overflow-x: scroll;
+    border-radius: 5px;
+}
+.wrapCompanyPartner {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    overflow-x: scroll;
 }
 .companyPartner {
-    height: 150px;
-    width: 150px;
-    background-color: yellowgreen;
+    width: 80px;
+    min-height: 45px;
+    background-color: #8cc6ff;
+    margin: 5px 5px 0 5px;
+    border-radius: 5px;
 }

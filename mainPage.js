@@ -1,7 +1,6 @@
 "use strict";
 $(document).ready(function () {
     let data;
-    let totalCompanies;
     $.ajax({
         url: 'http://codeit.pro/codeitCandidates/serverFrontendTest/company/getList',
         type: 'POST',
@@ -27,12 +26,16 @@ $(document).ready(function () {
             $(div).addClass('company').html(company.name).appendTo($('.listOfCompanies'));
         }
     }
+    let self;
     function showCompanyPartners(companies) {
-
         $('.listOfCompanies').on('click', (e) => {
-            $('.companyPartnersDisable').toggleClass('companyPartnersShow');
-            $(e.target).toggleClass('selectedCompany');
-            $('.companyPartner').detach();
+            if (self) {
+                $(self).removeClass('selectedCompany');
+            }
+            $('.companyPartnersDisable').addClass('companyPartnersShow');
+            $(e.target).addClass('selectedCompany');
+            $('.wrapCompanyPartner').detach();
+            self = e.target;
             //get number of target company
             let i = 0;
             for (let company of companies.list) {
@@ -41,15 +44,15 @@ $(document).ready(function () {
                 }
                     i++
             }
-            // for (let company of companies.list[i]) {
-            //     let div = document.createElement('div');
-            //     $(div).addClass('companyPartner').html(company.partners).appendTo($('.companyPartnersShow'));
-            //     //$('.companyPartner').html(companies.list[i].name).appendTo($('.companyPartnersShow'));
-            // }
             let company = companies.list[i];
+            let wrapDivCompany = document.createElement('div');
+            $(wrapDivCompany).addClass('wrapCompanyPartner').appendTo('.companyPartnersShow')
              for (let j = 0; j <  company.partners.length; j++) {
+
                  let divCompany = document.createElement('div');
-                 $(divCompany).addClass('companyPartner').html(company.partners[j].name + ' - ' + company.partners[j].value + '%').appendTo($('.companyPartnersShow'));
+                 $(divCompany).addClass('companyPartner').html(company.partners[j].name + ' - ' + company.partners[j].value + '%').appendTo($('.wrapCompanyPartner'));
+                 //calculate height for partner company div
+                 $(divCompany).height(company.partners[j].value * ((($('.companyPartnersShow').height()) - ($('.title').height()))/100));
              }
         })
     }
