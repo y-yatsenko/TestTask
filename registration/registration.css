@@ -8,7 +8,6 @@ body {
 }
 .formHead {
     display: flex;
-    background-color: beige;
     justify-content: center;
 }
 .form {

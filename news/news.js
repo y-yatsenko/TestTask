@@ -1,6 +1,6 @@
 "use strict";
 $(document).ready(function () {
-    let data;
+    let data = {};
     let i = 0;
     $.ajax({
         url: 'http://codeit.pro/codeitCandidates/serverFrontendTest/news/getList',
@@ -62,6 +62,5 @@ $(document).ready(function () {
         let date = a.getDate();
         let time = date + '.' + month + '.' + year;
         return time;
-    };
-
+    }
 })

@@ -1,6 +1,6 @@
 "use strict";
 $(document).ready(function () {
-    let data;
+    let data = {};
     $(document).on({
         ajaxStart: function() { showLoader();},
         ajaxStop: function() { hideLoader();}
@@ -10,7 +10,6 @@ $(document).ready(function () {
         type: 'POST',
         data,
         success: function (data) {
-            console.log(data);
             showTotalCompanies(data);
             showListOfCompanies(data);
             showCompanyPartners(data);
@@ -21,7 +20,6 @@ $(document).ready(function () {
         }
     });
     function showTotalCompanies(companies) {
-        //$('.t').html = 'axax';
         document.querySelector('.countOfCompanies').innerHTML = companies.list.length + '';
     }
     function showListOfCompanies(companies) {
@@ -61,11 +59,12 @@ $(document).ready(function () {
         })
     }
     function showLoader() {
-        $('.countOfCompanies').append(`<div class="load"><img src="ajax-loader%20(1).gif" alt="load..."></div>`);
-        $('.listOfCompanies').append(`<div class="load"><img src="ajax-loader%20(1).gif" alt="load..."></div>`);
+        $('.countOfCompanies').append(`<div class="load"><img src="../img/ajax-loader%20(1).gif" alt="load..."></div>`);
+        $('.listOfCompanies').append(`<div class="load"><img src="../img/ajax-loader%20(1).gif" alt="load..."></div>`);
 
     }
     function hideLoader() {
         $('.load').remove();
     }
+     console.log(data);
 })
